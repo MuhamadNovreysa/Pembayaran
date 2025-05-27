@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panduan Cek Ulang Pembayaran - Universitas Pelita Bangsa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .design-container {
+      width: 100%;
+      max-width: 210mm;
+    }
+
+    .a4-page {
+      width: 210mm;
+      height: 297mm;
+      background: #ffffff;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header Section */
+    .header-section {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 30%, #60a5fa 70%, #93c5fd 100%);
+      color: white;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-bg-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.1;
+    }
+
+    .pattern-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: float-dot 4s ease-in-out infinite;
+    }
+
+    .pattern-dot:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .pattern-dot:nth-child(2) {
+      top: 60%;
+      right: 15%;
+      animation-delay: 1s;
+    }
+
+    .pattern-dot:nth-child(3) {
+      bottom: 30%;
+      left: 20%;
+      animation-delay: 2s;
+    }
+
+    .pattern-line {
+      position: absolute;
+      width: 60px;
+      height: 2px;
+      background: white;
+      border-radius: 1px;
+      animation: float-line 6s ease-in-out infinite;
+    }
+
+    .pattern-line:nth-child(4) {
+      top: 40%;
+      right: 20%;
+      transform: rotate(45deg);
+      animation-delay: 0.5s;
+    }
+
+    .pattern-line:nth-child(5) {
+      bottom: 20%;
+      right: 30%;
+      transform: rotate(-30deg);
+      animation-delay: 2.5s;
+    }
+
+    @keyframes float-dot {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes float-line {
+      0%, 100% { transform: translateY(0px) rotate(45deg); }
+      50% { transform: translateY(-8px) rotate(45deg); }
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-section {
+      flex-shrink: 0;
+    }
+
+    .logo-container {
+      position: relative;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .logo-image {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: rotate-ring 10s linear infinite;
+    }
+
+    @keyframes rotate-ring {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .title-section {
+      flex: 1;
+    }
+
+    .main-title {
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .sub-title {
+      font-size: 20px;
+      font-weight: 600;
+      opacity: 0.9;
+      margin-bottom: 15px;
+    }
+
+    .title-underline {
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #fbbf24, #f59e0b);
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
+    }
+
+    /* Introduction Quote */
+    .intro-section {
+      padding: 40px;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
+
+    .quote-container {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .quote-mark-left,
+    .quote-mark-right {
+      font-size: 80px;
+      font-weight: 900;
+      color: #3b82f6;
+      line-height: 1;
+      opacity: 0.3;
+      font-family: serif;
+    }
+
+    .quote-mark-left {
+      margin-top: -10px;
+    }
+
+    .quote-mark-right {
+      margin-top: 20px;
+      align-self: flex-end;
+    }
+
+    .quote-content {
+      flex: 1;
+      text-align: center;
+    }
+
+    .quote-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #1e293b;
+      font-weight: 500;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .quote-author {
+      text-align: right;
+    }
+
+    .author-text {
+      font-size: 14px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    /* Cards Section */
+    .cards-section {
+      flex: 1;
+      padding: 40px;
+      background: #fafafa;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #3b82f6, #1e40af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #1e40af);
+    }
+
+    .step-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .card-icon {
+      font-size: 32px;
+      background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .quote-box {
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      padding: 20px;
+      border-radius: 15px;
+      border-left: 4px solid #3b82f6;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .mini-quote-left,
+    .mini-quote-right {
+      font-size: 24px;
+      font-weight: 900;
+      color: #3b82f6;
+      line-height: 1;
+      opacity: 0.6;
+      font-family: serif;
+    }
+
+    .mini-quote-left {
+      margin-top: -5px;
+    }
+
+    .mini-quote-right {
+      margin-top: 10px;
+      align-self: flex-end;
+    }
+
+    .card-quote {
+      flex: 1;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #475569;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: center;
+    }
+
+    .progress-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      transition: all 0.3s ease;
+    }
+
+    .progress-dot.active {
+      background: #3b82f6;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Bottom Section */
+    .bottom-section {
+      padding: 30px 40px;
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+    }
+
+    .tip-container {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      border: 2px solid #f59e0b;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .tip-icon {
+      font-size: 40px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+      flex-shrink: 0;
+    }
+
+    .tip-content {
+      flex: 1;
+    }
+
+    .tip-quote {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .tip-quote-mark {
+      font-size: 32px;
+      font-weight: 900;
+      color: #f59e0b;
+      line-height: 1;
+      opacity: 0.6;
+      font-family: serif;
+    }
+
+    .tip-text {
+      flex: 1;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #92400e;
+      font-weight: 500;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer-section {
+      background: linear-gradient(135deg, #1e293b, #334155);
+      padding: 25px 40px;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-text {
+      text-align: center;
+    }
+
+    .footer-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .footer-subtitle {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: white !important;
+      }
+
+      .design-container {
+        padding: 0;
+        min-height: auto;
+      }
+
+      .a4-page {
+        width: 210mm;
+        height: 297mm;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+        page-break-after: avoid;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+    }
+
+    /* Desktop & Large Screens */
+    @media screen and (min-width: 1200px) {
+      .a4-page {
+        width: 210mm;
+        max-width: 210mm;
+      }
+      
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+    }
+
+    /* Laptop & Medium Desktop */
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {
+      .design-container {
+        padding: 15px;
+      }
+
+      .a4-page {
+        width: 95vw;
+        max-width: 800px;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    /* Tablet Landscape & Small Desktop */
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      .design-container {
+        padding: 12px;
+      }
+
+      .a4-page {
+        width: 95vw;
+        max-width: 750px;
+      }
+
+      .header-section {
+        padding: 35px 30px;
+      }
+
+      .main-title {
+        font-size: 32px;
+      }
+
+      .sub-title {
+        font-size: 18px;
+      }
+
+      .intro-section {
+        padding: 30px;
+      }
+
+      .cards-section {
+        padding: 30px;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .bottom-section {
+        padding: 25px 30px;
+      }
+
+      .footer-section {
+        padding: 20px 30px;
+      }
+    }
+
+    /* Tablet Portrait */
+    @media screen and (min-width: 600px) and (max-width: 767px) {
+      .design-container {
+        padding: 10px;
+      }
+
+      .a4-page {
+        width: 95vw;
+        max-width: 600px;
+        border-radius: 16px;
+      }
+
+      .header-section {
+        padding: 30px 25px;
+      }
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+      }
+
+      .main-title {
+        font-size: 28px;
+      }
+
+      .sub-title {
+        font-size: 16px;
+      }
+
+      .intro-section {
+        padding: 25px;
+      }
+
+      .quote-container {
+        padding: 25px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      .quote-mark-left,
+      .quote-mark-right {
+        font-size: 60px;
+        align-self: center;
+      }
+
+      .quote-text {
+        font-size: 16px;
+      }
+
+      .cards-section {
+        padding: 25px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .step-card {
+        padding: 20px;
+      }
+
+      .bottom-section {
+        padding: 20px 25px;
+      }
+
+      .tip-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      .tip-quote {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-section {
+        padding: 18px 25px;
+      }
+    }
+
+    /* Mobile Landscape & Large Mobile */
+    @media screen and (min-width: 480px) and (max-width: 599px) {
+      .design-container {
+        padding: 8px;
+      }
+
+      .a4-page {
+        width: 95vw;
+        max-width: 480px;
+        border-radius: 12px;
+      }
+
+      .header-section {
+        padding: 25px 20px;
+      }
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .logo-container {
+        padding: 15px;
+      }
+
+      .logo-image {
+        width: 70px;
+        height: 70px;
+      }
+
+      .main-title {
+        font-size: 24px;
+      }
+
+      .sub-title {
+        font-size: 15px;
+      }
+
+      .intro-section {
+        padding: 20px;
+      }
+
+      .quote-container {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+
+      .quote-mark-left,
+      .quote-mark-right {
+        font-size: 50px;
+        align-self: center;
+      }
+
+      .quote-text {
+        font-size: 15px;
+      }
+
+      .cards-section {
+        padding: 20px;
+      }
+
+      .section-title {
+        font-size: 22px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .step-card {
+        padding: 18px;
+      }
+
+      .card-title {
+        font-size: 18px;
+      }
+
+      .card-quote {
+        font-size: 13px;
+      }
+
+      .bottom-section {
+        padding: 18px 20px;
+      }
+
+      .tip-container {
+        padding: 18px;
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+
+      .tip-text {
+        font-size: 14px;
+      }
+
+      .footer-section {
+        padding: 16px 20px;
+      }
+    }
+
+    /* Mobile Portrait & Small Mobile */
+    @media screen and (max-width: 479px) {
+      .design-container {
+        padding: 6px;
+      }
+
+      .a4-page {
+        width: 95vw;
+        max-width: 360px;
+        border-radius: 10px;
+      }
+
+      .header-section {
+        padding: 20px 16px;
+      }
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+      }
+
+      .logo-container {
+        padding: 12px;
+      }
+
+      .logo-image {
+        width: 60px;
+        height: 60px;
+      }
+
+      .main-title {
+        font-size: 20px;
+      }
+
+      .sub-title {
+        font-size: 14px;
+      }
+
+      .title-underline {
+        width: 60px;
+        height: 3px;
+      }
+
+      .intro-section {
+        padding: 16px;
+      }
+
+      .quote-container {
+        padding: 16px;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .quote-mark-left,
+      .quote-mark-right {
+        font-size: 40px;
+        align-self: center;
+      }
+
+      .quote-text {
+        font-size: 13px;
+      }
+
+      .author-text {
+        font-size: 12px;
+      }
+
+      .cards-section {
+        padding: 16px;
+      }
+
+      .section-title {
+        font-size: 18px;
+      }
+
+      .section-subtitle {
+        font-size: 14px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .step-card {
+        padding: 16px;
+      }
+
+      .card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+      }
+
+      .card-title {
+        font-size: 16px;
+      }
+
+      .quote-box {
+        padding: 15px;
+        gap: 8px;
+      }
+
+      .card-quote {
+        font-size: 12px;
+      }
+
+      .mini-quote-left,
+      .mini-quote-right {
+        font-size: 18px;
+      }
+
+      .bottom-section {
+        padding: 16px;
+      }
+
+      .tip-container {
+        padding: 16px;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .tip-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+      }
+
+      .tip-text {
+        font-size: 12px;
+      }
+
+      .tip-quote-mark {
+        font-size: 24px;
+      }
+
+      .footer-section {
+        padding: 14px 16px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-logo {
+        width: 35px;
+        height: 35px;
+      }
+
+      .footer-title {
+        font-size: 13px;
+      }
+
+      .footer-subtitle {
+        font-size: 10px;
+      }
+    }
+
+    /* Very Small Mobile */
+    @media screen and (max-width: 320px) {
+      .design-container {
+        padding: 4px;
+      }
+
+      .a4-page {
+        width: 98vw;
+        max-width: 300px;
+      }
+
+      .header-section {
+        padding: 16px 12px;
+      }
+
+      .main-title {
+        font-size: 18px;
+      }
+
+      .sub-title {
+        font-size: 13px;
+      }
+
+      .intro-section {
+        padding: 12px;
+      }
+
+      .quote-text {
+        font-size: 12px;
+      }
+
+      .cards-section {
+        padding: 12px;
+      }
+
+      .section-title {
+        font-size: 16px;
+      }
+
+      .step-card {
+        padding: 14px;
+      }
+
+      .card-title {
+        font-size: 15px;
+      }
+
+      .card-quote {
+        font-size: 11px;
+      }
+
+      .bottom-section {
+        padding: 12px;
+      }
+
+      .tip-text {
+        font-size: 11px;
+      }
+
+      .footer-section {
+        padding: 12px;
+      }
+    }
+
+    /* Landscape Orientation on Mobile */
+    @media screen and (max-height: 500px) and (orientation: landscape) {
+      .design-container {
+        padding: 8px;
+      }
+
+      .a4-page {
+        width: 95vw;
+        max-width: none;
+      }
+
+      .header-section {
+        padding: 20px 25px;
+      }
+
+      .header-content {
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      .intro-section {
+        padding: 20px 25px;
+      }
+
+      .cards-section {
+        padding: 20px 25px;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .step-card {
+        padding: 16px;
+      }
+
+      .bottom-section {
+        padding: 16px 25px;
+      }
+
+      .footer-section {
+        padding: 16px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="design-container">
+    <div class="a4-page">
+      <!-- Header Section -->
+      <div class="header-section">
+        <div class="header-bg-pattern">
+          <div class="pattern-dot"></div>
+          <div class="pattern-dot"></div>
+          <div class="pattern-dot"></div>
+          <div class="pattern-line"></div>
+          <div class="pattern-line"></div>
+        </div>
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo-container">
+              <img src="/logo-upb-official.png" alt="Universitas Pelita Bangsa" class="logo-image" />
+              <div class="logo-ring"></div>
+            </div>
+          </div>
+          <div class="title-section">
+            <h1 class="main-title">Panduan Cek Ulang Pembayaran</h1>
+            <h2 class="sub-title">Universitas Pelita Bangsa</h2>
+            <div class="title-underline"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Introduction Quote -->
+      <div class="intro-section">
+        <div class="quote-container">
+          <div class="quote-mark-left">"</div>
+          <div class="quote-content">
+            <p class="quote-text">
+              Buat kalian yang udah transfer pembayaran lewat bank, yuk pastikan pembayaran kalian udah tercatat
+              dengan ngikutin step-step berikut di E.Campus!
+            </p>
+            <div class="quote-author">
+              <span class="author-text">— Tim IT UPB</span>
+            </div>
+          </div>
+          <div class="quote-mark-right">"</div>
+        </div>
+      </div>
+
+      <!-- Cards Grid Section -->
+      <div class="cards-section">
+        <div class="section-header">
+          <h3 class="section-title">7 Langkah Mudah Verifikasi</h3>
+          <div class="section-subtitle">Ikuti step by step biar gak ada yang kelewat!</div>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <div class="step-card card-1">
+            <div class="card-header">
+              <div class="card-icon">🔐</div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Login ke E.Campus</h4>
+              <div class="quote-box">
+                <div class="mini-quote-left">"</div>
+                <p class="card-quote">
+                  Masuk dulu ke akun E.Campus kalian pake username sama password yang udah dikasih ya!
+                </p>
+                <div class="mini-quote-right">"</div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="progress-dot active"></div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="step-card card-2">
+            <div class="card-header">
+              <div class="card-icon">💰</div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Menu Pembayaran</h4>
+              <div class="quote-box">
+                <div class="mini-quote-left">"</div>
+                <p class="card-quote">
+                  Setelah login, langsung aja cari dan klik menu 'Pembayaran Mahasiswa' di dashboard.
+                </p>
+                <div class="mini-quote-right">"</div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="progress-dot"></div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="step-card card-3">
+            <div class="card-header">
+              <div class="card-icon">⚡</div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Proses Pembayaran</h4>
+              <div class="quote-box">
+                <div class="mini-quote-left">"</div>
+                <p class="card-quote">
+                  Klik 'Proses Pembayaran' buat liat semua detail transaksi yang lagi berjalan.
+                </p>
+                <div class="mini-quote-right">"</div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="progress-dot"></div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="step-card card-4">
+            <div class="card-header">
+              <div class="card-icon">🏦</div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Pilih Bank</h4>
+              <div class="quote-box">
+                <div class="mini-quote-left">"</div>
+                <p class="card-quote">
+                  Pilih 'Faspay' kalau pake Permata/Mandiri, atau 'BNI' kalau pake bank BNI ya!
+                </p>
+                <div class="mini-quote-right">"</div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="progress-dot"></div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="step-card card-5">
+            <div class="card-header">
+              <div class="card-icon">🔍</div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Cek Ulang</h4>
+              <div class="quote-box">
+                <div class="mini-quote-left">"</div>
+                <p class="card-quote">
+                  Cari kode VA yang sama dengan bukti transfer kalian, terus klik 'Cek Ulang'.
+                </p>
+                <div class="mini-quote-right">"</div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="progress-dot"></div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="step-card card-6">
+            <div class="card-header">
+              <div class="card-icon">✅</div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Cek Status</h4>
+              <div class="quote-box">
+                <div class="mini-quote-left">"</div>
+                <p class="card-quote">
+                  Kalau udah muncul 'Payment Sukses', berarti pembayaran kalian udah berhasil tercatat!
+                </p>
+                <div class="mini-quote-right">"</div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="progress-dot"></div>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="step-card card-7">
+            <div class="card-header">
+              <div class="card-icon">🔄</div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Refresh & Selesai</h4>
+              <div class="quote-box">
+                <div class="mini-quote-left">"</div>
+                <p class="card-quote">
+                  Terakhir, refresh halaman buat mastiin semuanya udah oke dan gak ada kendala!
+                </p>
+                <div class="mini-quote-right">"</div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="progress-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Quote -->
+      <div class="bottom-section">
+        <div class="tip-container">
+          <div class="tip-icon">💡</div>
+          <div class="tip-content">
+            <div class="tip-quote">
+              <div class="tip-quote-mark">"</div>
+              <p class="tip-text">
+                Pro tip: Jangan lupa simpan bukti transfer kalian sebagai backup, siapa tau nanti dibutuhin!
+              </p>
+              <div class="tip-quote-mark">"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer-section">
+        <div class="footer-content">
+          <img src="/logo-upb-official.png" alt="UPB" class="footer-logo" />
+          <div class="footer-text">
+            <p class="footer-title">Universitas Pelita Bangsa</p>
+            <p class="footer-subtitle">E.Campus Payment Guide 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
